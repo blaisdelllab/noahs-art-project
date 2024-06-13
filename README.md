@@ -1,9 +1,9 @@
-## Noah’s Art Program (Stained Glass)
-# Introduction
+# Noah’s Art Program (Stained Glass)
+## Introduction
 The Noah’s Art Program is a unique application that allows a wide range of species to create art using a touchscreen-based digital paint program. This project involves a control panel for selecting pigeon subjects and a painting interface where the art is created. The program supports two modes: one for use in an operant box and another for a regular desktop environment. The software is built with minimal dependencies, making it easy to implement across various systems. However, the hardware aspect could be challenging, particularly with setting up the touchscreen. We use an infrared touchscreen frame mounted over our monitor, which is connected to our main computer via USB.
 
-# Instructions
-1.	Setup:
+## Instructions
+### 1.	Setup:
 •	Ensure all dependencies are installed (see the Requirements section).
 •	Place the Box_number.txt file in the appropriate directory if running in operant box mode.
 2.	Running the Program:
@@ -18,7 +18,7 @@ The Noah’s Art Program is a unique application that allows a wide range of spe
 •	Right mouse button Cancel drawing.
 •	Escape Save the current artwork and exit the program.
 
-# Requirements
+## Requirements
 The following dependencies are required to run the program:
 •	Python 3.x
 •	tkinter (included with standard Python installations)
