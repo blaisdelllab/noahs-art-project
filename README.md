@@ -4,19 +4,28 @@ The Noah’s Art Program is a unique application that allows a wide range of spe
 
 ## Instructions
 ### 1.	Setup:
-Ensure all dependencies are installed (see the Requirements section).
+•	Ensure all dependencies are installed (see the Requirements section).
 
 •	Place the Box_number.txt file in the appropriate directory if running in operant box mode.
-2.	Running the Program:
+
+### 2.	Running the Program:
 •	Launch the program by running the script. This will open the control panel.
+
 •	Select a subject name from the dropdown menu.
+
 •	Click the "Start program" button to begin the painting session.
+
 •	The painting interface will open, where the subject can create art using the touchscreen.
-3.	Controls:
+
+### 3.	Controls:
 •	(l) Toggle lines on the canvas.
+
 •	(spacebar) Toggle labels on the canvas.
+
 •	Left mouse button Draw on the canvas.
+
 •	Right mouse button Cancel drawing.
+
 •	Escape Save the current artwork and exit the program.
 
 ## Requirements
