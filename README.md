@@ -28,33 +28,47 @@ The Noah’s Art Program is a unique application that allows a wide range of spe
 
 •	Escape Save the current artwork and exit the program.
 
-## Requirements
+### Requirements
 The following dependencies are required to run the program:
+
 •	Python 3.x
+
 •	tkinter (included with standard Python installations)
+
 •	functools (included with standard Python installations)
+
 •	time (included with standard Python installations)
+
 •	datetime (included with standard Python installations)
+
 •	random (included with standard Python installations)
+
 •	os (included with standard Python installations)
+
 •	csv (included with standard Python installations)
+
 •	math (included with standard Python installations)
+
 •	Pillow (Python Imaging Library)
+
 You can install Pillow using pip:
+
 pip install pillow
 
-# Contact Information
+## Contact Information
 Contributions are welcome! If you would like to contribute to this project, or if you have any questions, suggestions, or issues, please feel free to contact:
+
 •	Corresponding Author : Aaron P. Blaisdell
+
 •	Email : DrAaronBlaisdell@gmail.com
 
-# Acknowledgements
+## Acknowledgements
 •	Thanks to the Python community for their contributions to open-source libraries that made this project possible.
 
-# Credits
+## Credits
 The Noah’s Art Program was developed through the collaborative efforts of Paul Gan, Robert Tsai, Cameron Guo, and Cyrus Kirkman. Their combined expertise and dedication have made this project possible.
 
-# License
+## License
 Copyright (c) [2024] [Aaron Blaisdell] 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
