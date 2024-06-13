@@ -4,7 +4,8 @@ The Noah’s Art Program is a unique application that allows a wide range of spe
 
 ## Instructions
 ### 1.	Setup:
-•	Ensure all dependencies are installed (see the Requirements section).
+Ensure all dependencies are installed (see the Requirements section).
+
 •	Place the Box_number.txt file in the appropriate directory if running in operant box mode.
 2.	Running the Program:
 •	Launch the program by running the script. This will open the control panel.
