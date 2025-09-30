@@ -7,7 +7,7 @@
 # Last updated: 2025-09-30
 
 # First we import the libraries relevant for this project
-from tkinter import Tk, Canvas, BOTH
+from tkinter import Tk, Canvas, BOTH, Toplevel, Label
 from graph import Graph
 from tkinter import messagebox, simpledialog
 import functools
