@@ -657,8 +657,7 @@ class Paint:
 
             # Refresh Google Drive with new .eps file / data folder
             if operant_box_version:
-                subprocess.run("rclone copy /home/blaisdelllab/Desktop/Data drive:RPiDataBackup",
-                    check=True)
+                subprocess.run(["/bin/bash", "/home/blaisdelllab/Desktop/Hardware_code/update_git.sh"], check=True)
                 print("\n- Google Drive updated")
                 # except:
                 #     print("ERROR refreshing Google Drive")
