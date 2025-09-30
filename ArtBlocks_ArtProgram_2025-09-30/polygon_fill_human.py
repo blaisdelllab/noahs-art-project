@@ -17,6 +17,7 @@ from random import randint, choice
 from os import path, getcwd, mkdir
 from csv import writer, reader, QUOTE_MINIMAL
 from PIL import Image
+from subprocess import run
 
 # The first variable declared is whether the program is the operant box version
 # for pigeons, or the test version for humans to view. The variable below is 
@@ -653,6 +654,17 @@ class Paint:
                 print(f"\n- Email data file written to {myFile_loc}")
 
             messagebox.showinfo("File Save", "File saved! Thank you.")
+
+            # Refresh Google Drive with new .eps file / data folder
+            if operant_box_version:
+                cmd = ["rclone",
+                        "copy",
+                        "/home/blaisdelllab/Desktop/Data",
+                        "drive:RPiDataBackup"
+                        ]
+                run(cmd, check=True)
+                print("\n- Google Drive updated")
+
 
         # Old version 2025-09-30
         """
