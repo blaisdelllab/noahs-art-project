@@ -7,10 +7,10 @@ touchscreen program for users to interact with the following interaction keys:
 - <ESC>    Save canvas as anonymous and exit program
 - <l>      Show/hide lines on the canvas
 
-Dependencies:
+## Dependencies:
 - PIL
 - Python 3.1+
 
-# Contributers: Cyrus Kirkman, Paul G., Robert T., and Cameron G.
+## Contributers: Cyrus Kirkman, Paul G., Robert T., and Cameron G.
 
-# Last updated: 2025-09-30
+## Last updated: 2025-09-30
