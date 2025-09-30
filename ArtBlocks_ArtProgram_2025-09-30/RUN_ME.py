@@ -626,6 +626,65 @@ class Paint:
             if email is None:
                 email = "Not Provided"  # allow blank if user cancels
 
+            # --- Simple temporary "Saving..." popup (no threads/progress bar) ---
+            saving = Toplevel(self.root)
+            saving.title("Saving")
+            saving.transient(self.root)
+            saving.resizable(False, False)
+            Label(saving, text="Saving Your Canvas...", padx=20, pady=14).pack()
+
+            # Make sure it actually appears before we start the blocking work
+            saving.lift()
+            try:
+                saving.attributes("-topmost", True)
+            except Exception:
+                pass
+            saving.update_idletasks()
+            saving.after(10, lambda: saving.attributes("-topmost", False))  # optional
+
+            # Save file and update email list
+            now = datetime.now()
+            img_file_name = f"{self.save_directory}/{name}_{now.strftime('%m-%d-%Y_Time-%H-%M-%S')}_stained_glass_human"
+            img_fileps = img_file_name + ".eps"
+            self.canvas.postscript(file=img_fileps, colormode="color")
+
+            myFile_loc = f"{data_folder_directory}/P033c_human_email_data_StainedGlassData3.csv"
+            try:
+                with open(myFile_loc, newline='') as csvfile:
+                    csv_reader = reader(csvfile)
+                    email_data_matrix = list(csv_reader)
+                    if len(email_data_matrix) == 0:
+                        email_data_matrix = [["ImagePath", "Name", "Email", "SavedAt"]]
+            except FileNotFoundError:
+                email_data_matrix = [["ImagePath", "Name", "Email", "SavedAt"]]
+
+            email_data_matrix.append([img_fileps, name, email, now.isoformat(timespec="seconds")])
+
+            with open(myFile_loc, 'w', newline='') as myFile:
+                w = writer(myFile, quoting=QUOTE_MINIMAL)
+                w.writerows(email_data_matrix)
+                print(f"\n- Email data file written to {myFile_loc}")
+
+            # Optional: sync Google Drive
+            if operant_box_version:
+                try:
+                    subprocess.run(
+                        ["/bin/bash", "/home/blaisdelllab/Desktop/Hardware_Code/sync_drive.sh"],
+                        check=True
+                    )
+                    print("\n- Google Drive updated")
+                except Exception as e:
+                    print(f"ERROR refreshing Google Drive: {e}")
+
+            # Done: close the temporary popup and show the final message
+            try:
+                saving.destroy()
+            except Exception:
+                pass
+
+            messagebox.showinfo("File Save", "File saved! Thank you.")
+
+            """
             # Save file and update email list
             now = datetime.now()
             img_file_name = f"{self.save_directory}/{name}_{now.strftime('%m-%d-%Y_Time-%H-%M-%S')}_stained_glass_human"
@@ -653,15 +712,16 @@ class Paint:
                 w.writerows(email_data_matrix)
                 print(f"\n- Email data file written to {myFile_loc}")
 
-            messagebox.showinfo("File Save", "File saved! Thank you.")
-
             # Refresh Google Drive with new .eps file / data folder
             if operant_box_version:
-                subprocess.run(["/bin/bash", "/home/blaisdelllab/Desktop/Hardware_code/update_git.sh"], check=True)
-                print("\n- Google Drive updated")
-                # except:
-                #     print("ERROR refreshing Google Drive")
+                try:
+                    subprocess.run(["/bin/bash", "/home/blaisdelllab/Desktop/Hardware_Code/sync_drive.sh"], check=True)
+                    print("\n- Google Drive updated")
+                except:
+                    print("ERROR refreshing Google Drive")
 
+            messagebox.showinfo("File Save", "File saved! Thank you.")
+        """
 
         # Old version 2025-09-30
         """
