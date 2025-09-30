@@ -5,7 +5,7 @@ touchscreen program for users to interact with the following interaction keys:
 - Key/TS: Initiate new line or end existing line at current XY coordinate
 - Space:  Choose to save existing canvas and gather name/email
 - ESC:    Save canvas as anonymous and exit program
-- l:      Show/hide lines on the canvas
+- L:      Show/hide lines on the canvas
 
 ### Dependencies:
 - PIL
