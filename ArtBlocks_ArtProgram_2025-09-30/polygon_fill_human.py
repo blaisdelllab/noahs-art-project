@@ -60,8 +60,8 @@ if operant_box_version:
         if not path.isdir(art_save_directory):
             mkdir(path.join(art_save_directory))
             print("\n ** NEW DATA FOLDER FOR %s CREATED **")
-        except FileExistsError:
-            print("Data folder for %s exists.")
+    except FileExistsError:
+        print("Data folder for %s exists.")
     
 ## Define functions:
     
