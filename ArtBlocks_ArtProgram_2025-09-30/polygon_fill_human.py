@@ -52,6 +52,16 @@ try:
         print("\n ** NEW DATA FOLDER FOR %s CREATED **")
 except FileExistsError:
     print("Data folder for %s exists.")
+
+# Create art subfolder (if it does not exist)
+if operant_box_version:
+    art_save_directory = data_folder_directory + "/saved_canvases"
+    try:
+        if not path.isdir(art_save_directory):
+            mkdir(path.join(art_save_directory))
+            print("\n ** NEW DATA FOLDER FOR %s CREATED **")
+        except FileExistsError:
+            print("Data folder for %s exists.")
     
 ## Define functions:
     
@@ -88,7 +98,7 @@ class Paint:
                                    expand = True)
             
             # Canvas save directory
-            self.save_directory = "/home/blaisdelllab/Desktop/P033/saved_art"
+            self.save_directory = art_save_directory
 
         else:
             self.width, self.height = 1024, 768
