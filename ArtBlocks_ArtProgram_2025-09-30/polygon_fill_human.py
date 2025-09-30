@@ -657,13 +657,12 @@ class Paint:
 
             # Refresh Google Drive with new .eps file / data folder
             if operant_box_version:
-                cmd = ["rclone",
-                        "copy",
-                        "/home/blaisdelllab/Desktop/Data",
-                        "drive:RPiDataBackup"
-                        ]
-                run(cmd, check=True)
-                print("\n- Google Drive updated")
+                try:
+                    run("rclone copy /home/blaisdelllab/Desktop/Data drive:RPiDataBackup",
+                        check=True)
+                    print("\n- Google Drive updated")
+                except:
+                    print("ERROR refreshing Google Drive")
 
 
         # Old version 2025-09-30
