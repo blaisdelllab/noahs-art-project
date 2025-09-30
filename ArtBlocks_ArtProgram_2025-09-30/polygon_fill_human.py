@@ -41,7 +41,7 @@ else:
 TIME = 0 # Gives a metric for relevative efficiency
 
 if operant_box_version:
-    data_folder_directory = "/home/blaisdelllab/Desktop/P033/P033c_StainedGlass_Data"
+    data_folder_directory = "/home/blaisdelllab/Desktop/Data/P033c_HUMAN_data"
 else:
     data_folder_directory  = getcwd() + "/P033c_StainedGlass_Data"
 
