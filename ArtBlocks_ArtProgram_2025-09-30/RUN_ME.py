@@ -17,7 +17,7 @@ from random import randint, choice
 from os import path, getcwd, mkdir
 from csv import writer, reader, QUOTE_MINIMAL
 from PIL import Image
-from subprocess import run
+import subprocess
 
 # The first variable declared is whether the program is the operant box version
 # for pigeons, or the test version for humans to view. The variable below is 
@@ -657,12 +657,11 @@ class Paint:
 
             # Refresh Google Drive with new .eps file / data folder
             if operant_box_version:
-                try:
-                    run("rclone copy /home/blaisdelllab/Desktop/Data drive:RPiDataBackup",
-                        check=True)
-                    print("\n- Google Drive updated")
-                except:
-                    print("ERROR refreshing Google Drive")
+                subprocess.run("rclone copy /home/blaisdelllab/Desktop/Data drive:RPiDataBackup",
+                    check=True)
+                print("\n- Google Drive updated")
+                # except:
+                #     print("ERROR refreshing Google Drive")
 
 
         # Old version 2025-09-30
